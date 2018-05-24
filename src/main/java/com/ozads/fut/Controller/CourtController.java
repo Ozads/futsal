@@ -12,7 +12,7 @@ import com.ozads.fut.Services.CourtService;
 import com.ozads.fut.request.CourtCreationRequest;
 
 @RestController
-@RequestMapping("/rest/courts")
+@RequestMapping("rest/courts")
 public class CourtController {
 	
 	@Autowired
