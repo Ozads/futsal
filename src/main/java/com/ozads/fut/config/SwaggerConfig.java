@@ -78,8 +78,8 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
 		
 		//System.out.println("---------------------------------------------");
 
-		ApiInfo apiInfo = new ApiInfo(" A-Nexus", "", "", "",
-				new Contact("", "", "karkideependra58@gmail.com, yubarajoli77@gmail.com"), "", "");
+		ApiInfo apiInfo = new ApiInfo(" Futsal", "", "", "",
+				new Contact("", "", ""), "", "");
 
 		return apiInfo;
 	}

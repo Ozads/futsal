@@ -2,6 +2,7 @@ package com.ozads.fut.Entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import javax.persistence.OneToOne;
 public class Owner {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	@OneToOne(cascade=CascadeType.ALL)
@@ -21,6 +22,11 @@ public class Owner {
 	
 	private String email;
 	private String password;
+	
+	@OneToOne(mappedBy="owner",cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private Booking booking;
+	
+	
 	public Long getId() {
 		return id;
 	}

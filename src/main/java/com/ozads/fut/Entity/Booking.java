@@ -2,19 +2,33 @@ package com.ozads.fut.Entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Booking {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	private User user;
-	private Owner owner;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="courtId")
 	private Court court;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="userId")
+	private User user;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="ownerId")
+	private Owner owner;
+	
 	private Date date;
 	private String time;
 	private String code;

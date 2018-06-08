@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ozads.fut.Request.CourtCreationRequest;
 import com.ozads.fut.Services.CourtService;
-import com.ozads.fut.request.CourtCreationRequest;
 
 @RestController
 @RequestMapping("rest/courts")
@@ -20,7 +20,7 @@ public class CourtController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Object> postCourt(@RequestBody CourtCreationRequest courtCreationRequest){
-		courtService.creteCourt(courtCreationRequest);
+		courtService.createCourt(courtCreationRequest);
 		return new ResponseEntity<>("Court posted Successfully",HttpStatus.CREATED);
 	}
 	

@@ -1,5 +1,11 @@
 package com.ozads.fut.Repository;
 
-public class OwnerRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ozads.fut.Entity.Owner;
+
+@Repository
+public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
 }

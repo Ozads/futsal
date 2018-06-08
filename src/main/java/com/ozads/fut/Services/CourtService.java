@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.ozads.fut.Entity.Court;
 import com.ozads.fut.Repository.CourtRepository;
-import com.ozads.fut.request.CourtCreationRequest;
+import com.ozads.fut.Request.CourtCreationRequest;
 
 @Service
 public class CourtService {
@@ -13,7 +13,7 @@ public class CourtService {
 	@Autowired
 	private CourtRepository courtRepository;
 
-	public void creteCourt(CourtCreationRequest courtCreationRequest) {
+	public void createCourt(CourtCreationRequest courtCreationRequest) {
 		Court court=new Court();
 		court.setLocation(courtCreationRequest.getLocation());
 		court.setName(courtCreationRequest.getName());
@@ -23,3 +23,4 @@ public class CourtService {
 	}
 
 }
+

@@ -1,4 +1,4 @@
-package com.ozads.fut.request;
+package com.ozads.fut.Request;
 
 public class CourtCreationRequest {
 
